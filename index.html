@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elnor Tankiev - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            scroll-behavior: smooth;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+        .timeline-line {
+            position: absolute;
+            left: 11px;
+            top: 1px;
+            bottom: 1px;
+            width: 1px;
+            background-color: #30363d;
+            z-index: 0;
+        }
+
+        /* Classes for JavaScript toggling */
+        .nav-text-active { color: #4ade80; }
+        .nav-text-inactive { color: #8b949e; }
+        .dot-active { background-color: #4ade80; box-shadow: 0 0 10px rgba(74,222,128,0.5); border: none; }
+        .dot-inactive { background-color: transparent; border: 1px solid #484f58; box-shadow: none; }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden antialiased">
+
+    <nav class="w-64 h-full hidden md:flex flex-col border-r border-[#30363d] p-8 relative z-10 shrink-0 bg-[#0d1117]">
+        <div class="relative mt-32 h-50">
+            <div class="timeline-line"></div>
+            
+            <ul class="space-y-12 relative z-10">
+                <li class="flex items-center group cursor-pointer" onclick="scrollToSection('main')">
+                    <div class="w-6 h-6 rounded-full bg-[#0d1117] flex items-center justify-center relative">
+                        <div id="dot-main" class="w-3 h-3 rounded-full dot-active transition-all duration-300"></div>
+                    </div>
+                    <span id="text-main" class="ml-4 text-xs nav-text-active tracking-widest uppercase transition-colors duration-300 group-hover:text-[#4ade80]">Main Page</span>
+                </li>
+
+                <li class="flex items-center group cursor-pointer" onclick="scrollToSection('projects')">
+                    <div class="w-6 h-6 rounded-full bg-[#0d1117] flex items-center justify-center relative">
+                        <div id="dot-projects" class="w-2.5 h-2.5 rounded-full dot-inactive transition-all duration-300"></div>
+                    </div>
+                    <span id="text-projects" class="ml-4 text-xs nav-text-inactive tracking-widest uppercase transition-colors duration-300 group-hover:text-[#4ade80]">Skill Page</span>
+                </li>
+
+                <li class="flex items-center group cursor-pointer" onclick="scrollToSection('contact')">
+                    <div class="w-6 h-6 rounded-full bg-[#0d1117] flex items-center justify-center relative">
+                        <div id="dot-contact" class="w-2.5 h-2.5 rounded-full dot-inactive transition-all duration-300"></div>
+                    </div>
+                    <span id="text-contact" class="ml-4 text-xs nav-text-inactive tracking-widest uppercase transition-colors duration-300 group-hover:text-[#4ade80]">Contact Page</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="scroll-container" class="flex-1 overflow-y-auto p-8 md:p-16 lg:px-32 relative">
+        <div class="max-w-4xl mx-auto">
+
+            <section id="main" class="min-h-screen pt-16 pb-32">
+                <div class="mb-8 text-sm text-[#8b949e]">
+                    <span class="text-[#4ade80]">~/portfolio</span> $ cat meow.md
+                </div>
+                
+                <h1 class="text-6xl font-bold mb-4">
+                    <span class="text-[#f0f6fc]">Elnor</span> <span class="text-[#4ade80]">Tankiev</span>
+                </h1>
+                <h2 class="text-xl text-[#4ade80] mb-8 font-medium tracking-wide">DevOps Engineering Student</h2>
+
+                <div class="border-l-2 border-[#30363d] pl-6 mb-12 text-[#8b949e] space-y-6 max-w-2xl leading-relaxed text-sm">
+                    <p>Jag är en "in making" DevOps ingenjör som för närvarande studerar utveckling och drift. Jag älskar att automatisera, att bygga pålitliga CI/CD pipelines och att lära mig hur man skalar infrastruktur. Mitt mål är att omvandla manuella uppgifter till sömlösa, automatiserade arbetsflöden.</p>
+                    <p> </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
+                    <div class="bg-[#161b22] border border-[#30363d] p-6 rounded-sm shadow-sm">
+                        <div class="text-2xl font-bold text-[#4ade80] mb-3">5/9 </div>
+                        <div class="text-[10px] text-[#8b949e] tracking-widest uppercase">Kurser tills examen</div>
+                        
+                    </div>
+                    <div class="bg-[#161b22] border border-[#30363d] p-6 rounded-sm shadow-sm">
+                        <div class="text-2xl font-bold text-[#4ade80] mb-3">&lt; 3 Hours</div>
+                        <div class="text-[10px] text-[#8b949e] tracking-widest uppercase">Study sessions</div>
+                    </div>
+                    <div class="bg-[#161b22] border border-[#30363d] p-6 rounded-sm shadow-sm">
+                        <div class="text-2xl font-bold text-[#fbbf24] mb-3">0</div>
+                        <div class="text-[10px] text-[#8b949e] tracking-widest uppercase">Kontaktade företag</div>
+                    </div>
+                    <div class="bg-[#161b22] border border-[#30363d] p-6 rounded-sm shadow-sm">
+                        <div class="text-2xl font-bold text-white mb-3">Nobara</div>
+                        <div class="text-[10px] text-[#8b949e] tracking-widest uppercase">Linux Distro</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="min-h-screen pt-16 pb-32">
+                <div class="mb-8 text-sm text-[#8b949e]">
+                    <span class="text-[#4ade80]">~/projects</span> $ cat skills.md
+                </div>
+                
+                <h1 class="text-3xl font-bold text-[#f0f6fc] mb-3">Skills</h1>
+                <h2 class="text-xs text-[#fbbf24] mb-8 tracking-widest uppercase font-semibold">DevOps Engineering Student</h2>
+
+                <div class="border-l-2 border-[#30363d] pl-6 mb-12 text-[#8b949e] max-w-3xl leading-relaxed text-sm">
+                    <p class="text-[#c9d1d9]">
+  <span class="text-[#4ade80]">*</span> Linux 
+  <span class="text-[#4ade80]">*</span> Databases 
+  <span class="text-[#4ade80]">*</span> Docker 
+  <span class="text-[#4ade80]">*</span> AgileMethods 
+  <span class="text-[#4ade80]">*</span> Python 
+  <span class="text-[#4ade80]">*</span> Kubernetes 
+  <span class="text-[#4ade80]">*</span> Git
+  <span class="text-[#4ade80]">*</span> CI/CD
+  <span class="text-[#4ade80]">*</span> Bash
+  <span class="text-[#4ade80]">*</span>
+  
+</p>
+                </div>
+
+                <div class="flex items-center space-x-6 mb-12">
+                    <div class="border border-[#30363d] bg-[#161b22] p-4 px-6 rounded-sm">
+                        <div class="text-[10px] text-[#8b949e] mb-2 tracking-widest">What's My</div>
+                        <div class="text-xl font-bold text-[#f87171]">Favorit</div>
+                    </div>
+                    <div class="text-[#8b949e] flex items-center">
+                        <span class="tracking-tighter">──</span>►
+                    </div>
+                    <div class="border border-[#14532d] bg-[#161b22] p-4 px-6 rounded-sm">
+                        <div class="text-[10px] text-[#8b949e] mb-2 tracking-widest">Skill</div>
+                        <div class="text-xl font-bold text-[#4ade80]">Bash</div>
+                    </div>
+                </div>
+
+                <div class>
+                    <div class="text-[20px] text-[#8b949e] mb-6 tracking-widest">Some Side Fun</div>
+                    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5887884" width="340" height="100" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+                </div>
+            </section>
+
+            <section id="contact" class="min-h-screen pt-16 pb-32">
+                <div class="mb-8 text-sm text-[#8b949e]">
+                    <span class="text-[#4ade80]">root</span> $ whoami
+                </div>
+                
+                <h1 class="text-3xl font-bold text-[#f0f6fc] mb-8">WhoAmI?</h1>
+                
+                <div class="bg-[#161b22] border border-[#30363d] p-8 rounded-sm max-w-2xl">
+                    <p class="text-[#8b949e] mb-8 text-sm leading-relaxed">
+                        Jag studerar för närvarande DevOps och söker aktivt efter en praktikplats eller juniortjänst där jag kan tillämpa mina kunskaper. Om ert team letar efter en engagerad elev som älskar att automatisera saker och bygga infrastruktur, skulle jag gärna vilja prata.
+                    </p>
+                    
+                    <div class="space-y-4">
+                      <a href="#" class="flex items-center p-4 border border-[#30363d] hover:border-[#4ade80] rounded-sm transition-colors group cursor-pointer bg-[#0d1117]">
+                            <span class="text-[#4ade80] mr-4">&gt;</span>
+                            <span class="text-[#c9d1d9] group-hover:text-white transition-colors">Tel: Ni får tel nummer på begäran </span>
+                        <a href="mailto:elnor.tankiev@Chasacademy.se" class="flex items-center p-4 border border-[#30363d] hover:border-[#4ade80] rounded-sm transition-colors group cursor-pointer bg-[#0d1117]">
+                            <span class="text-[#4ade80] mr-4">&gt;</span>
+                            <span class="text-[#c9d1d9] group-hover:text-white transition-colors">Email: elnor.tankiev@Chasacademy.se</span>
+                        </a>
+                        <a href="https://github.com/BottingGriefers" class="flex items-center p-4 border border-[#30363d] hover:border-[#4ade80] rounded-sm transition-colors group cursor-pointer bg-[#0d1117]">
+                            <span class="text-[#4ade80] mr-4">&gt;</span>
+                            <span class="text-[#c9d1d9] group-hover:text-white transition-colors">GitHub: @BottingGriefers</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/elnor-tankiev-b4459839b/" class="flex items-center p-4 border border-[#30363d] hover:border-[#4ade80] rounded-sm transition-colors group cursor-pointer bg-[#0d1117]">
+                            <span class="text-[#4ade80] mr-4">&gt;</span>
+<span class="text-[#c9d1d9] group-hover:text-white transition-colors">LinkedIn: Elnor</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        const sections = ['main', 'projects', 'contact'];
+
+        // Function to scroll when a button is clicked
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function to update the sidebar styling based on the active section
+        function updateSidebar(activeId) {
+            sections.forEach(id => {
+                const dot = document.getElementById(`dot-${id}`);
+                const text = document.getElementById(`text-${id}`);
+                
+                if (id === activeId) {
+                    // Set active styles
+                    dot.className = 'w-3 h-3 rounded-full dot-active transition-all duration-300';
+                    text.className = `ml-4 text-xs nav-text-active tracking-widest uppercase transition-colors duration-300 group-hover:text-[#4ade80]`;
+                } else {
+                    // Set inactive styles
+                    dot.className = 'w-2.5 h-2.5 rounded-full dot-inactive transition-all duration-300';
+                    text.className = `ml-4 text-xs nav-text-inactive tracking-widest uppercase transition-colors duration-300 group-hover:text-[#4ade80]`;
+                }
+            });
+        }
+
+        // Intersection Observer to detect which section is currently on screen
+        const observerOptions = {
+            root: document.getElementById('scroll-container'),
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateSidebar(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        // Tell the observer to watch our three sections
+        sections.forEach(id => {
+            observer.observe(document.getElementById(id));
+        });
+    </script>
+</body>
+</html>
